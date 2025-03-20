@@ -19,7 +19,7 @@ def load_tokens(server_name):
         if server_name == "IND":
             with open("token_ind.json", "r") as f:
                 tokens = json.load(f)
-        elif server_name in {"BR", "US", "SAC", "NA"}:
+        elif server_name in {"BR", "US", "SAC", "NA", "Sg"}:
             with open("token_br.json", "r") as f:
                 tokens = json.load(f)
         else:
@@ -122,7 +122,7 @@ def make_request(encrypt, server_name, token):
     try:
         if server_name == "IND":
             url = "https://client.ind.freefiremobile.com/GetPlayerPersonalShow"
-        elif server_name in {"BR", "US", "SAC", "NA"}:
+        elif server_name in {"BR", "US", "SAC", "NA", "Sg"}:
             url = "https://client.us.freefiremobile.com/GetPlayerPersonalShow"
         else:
             url = "https://clientbp.ggblueshark.com/GetPlayerPersonalShow"
